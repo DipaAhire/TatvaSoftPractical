@@ -6,8 +6,7 @@
 //
 
 import UIKit
-
-
+import Network
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CustomTableViewCellDelegate {
    
@@ -23,7 +22,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomTableViewCell")
-        stories()
+        
+        if NetworkMonitor.shared.isConnected{
+            print("you're connected")
+            stories()
+        }
+        else{
+            showAlert()
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -48,6 +54,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         title = "Number of selected posts:  \(ViewController.count)"
     }
     
+    func showAlert() {
+        print("you're not connected")
+        let alert = UIAlertController(title: "Network error", message: "Unable to connect the server. Check your connection and try again later!", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     // MARK: API Calling
     
     func stories() {
@@ -56,12 +69,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let configObj = URLSessionConfiguration.default
         let session = URLSession(configuration: configObj)
         let task = session.dataTask(with: urlRequest) { [weak self] (data, response, error) in
-            print(response)
+            //print(response)
             do {
                 let outerDic = try! JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? NSDictionary
-                print("Outer Dic:", outerDic)
+                //print("Outer Dic:", outerDic)
                 let dataArray = outerDic?.value(forKey: "hits") as? NSArray
-                print("DataArray:", dataArray)
+                //print("DataArray:", dataArray)
                 for item in dataArray! {
                     let dic = item as? NSDictionary
                     let createdAt = dic?.value(forKey: "created_at") as? String
