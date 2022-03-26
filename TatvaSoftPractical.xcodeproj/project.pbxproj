@@ -66,17 +66,49 @@
 			children = (
 				581C4D5A27EF3B5D00297751 /* AppDelegate.swift */,
 				581C4D5C27EF3B5D00297751 /* SceneDelegate.swift */,
-				581C4D5E27EF3B5D00297751 /* ViewController.swift */,
-				581C4D6E27EF3D8300297751 /* CustomTableViewCell.swift */,
-				58F2336527EF49CD00B3280A /* Stories.swift */,
-				58F2336727EF677500B3280A /* NetworkMonitor.swift */,
-				581C4D6F27EF3D8300297751 /* CustomTableViewCell.xib */,
-				581C4D6027EF3B5D00297751 /* Main.storyboard */,
+				58F2336927EF6B0900B3280A /* Controller */,
+				58F2336C27EF6BC500B3280A /* Model */,
+				58F2336B27EF6BAD00B3280A /* Cell */,
+				58F2336A27EF6B5800B3280A /* View */,
 				581C4D6327EF3B5F00297751 /* Assets.xcassets */,
 				581C4D6527EF3B5F00297751 /* LaunchScreen.storyboard */,
 				581C4D6827EF3B5F00297751 /* Info.plist */,
 			);
 			path = TatvaSoftPractical;
+			sourceTree = "<group>";
+		};
+		58F2336927EF6B0900B3280A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				581C4D5E27EF3B5D00297751 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		58F2336A27EF6B5800B3280A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				581C4D6F27EF3D8300297751 /* CustomTableViewCell.xib */,
+				581C4D6027EF3B5D00297751 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		58F2336B27EF6BAD00B3280A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				581C4D6E27EF3D8300297751 /* CustomTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		58F2336C27EF6BC500B3280A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				58F2336527EF49CD00B3280A /* Stories.swift */,
+				58F2336727EF677500B3280A /* NetworkMonitor.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

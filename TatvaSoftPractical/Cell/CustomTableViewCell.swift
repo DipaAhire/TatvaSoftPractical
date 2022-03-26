@@ -28,13 +28,13 @@ class CustomTableViewCell: UITableViewCell {
     @IBAction func handleSwitchChangeState(_ sender: UISwitch) {
         
         if switchBtn.isOn {
-            print("True")
+            //print("True")
             contentView.backgroundColor = .gray
             ViewController.count += 1
             
 
         }else{
-            print("False")
+            //print("False")
             contentView.backgroundColor = .clear
             ViewController.count -= 1
         }
