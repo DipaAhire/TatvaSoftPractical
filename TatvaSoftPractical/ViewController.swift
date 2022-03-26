@@ -7,14 +7,19 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CustomTableViewCellDelegate {
+   
+    
 
     @IBOutlet var tableView: UITableView!
     var storiesData: [Stories] = []
+    static var count: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Post"
+        title = "Number of selected posts:  \(ViewController.count)"
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomTableViewCell")
@@ -29,6 +34,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as? CustomTableViewCell {
             cell.createdAt.text = storiesData[indexPath.row].createdAt
             cell.storyTitle.text = storiesData[indexPath.row].title
+            cell.delegate = self
             return cell
         }
         return UITableViewCell()
@@ -36,6 +42,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+    
+    func updateTitle() {
+        title = "Number of selected posts:  \(ViewController.count)"
     }
     
     // MARK: API Calling

@@ -6,7 +6,9 @@
 //
 
 import UIKit
-
+protocol CustomTableViewCellDelegate: AnyObject {
+    func updateTitle()
+}
 class CustomTableViewCell: UITableViewCell {
 
     @IBOutlet var storyTitle: UILabel!
@@ -15,7 +17,7 @@ class CustomTableViewCell: UITableViewCell {
     
     @IBOutlet var switchBtn: UISwitch!
     
-    var count: Int = 0
+    weak var delegate: CustomTableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,11 +30,16 @@ class CustomTableViewCell: UITableViewCell {
         if switchBtn.isOn {
             print("True")
             contentView.backgroundColor = .gray
-            count += 1
+            ViewController.count += 1
+            
+
         }else{
             print("False")
             contentView.backgroundColor = .clear
+            ViewController.count -= 1
         }
+        
+        delegate?.updateTitle()
         
     }
     
