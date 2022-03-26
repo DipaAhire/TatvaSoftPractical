@@ -16,8 +16,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="367" height="170"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ru5-yP-ddS">
-                        <rect key="frame" x="10" y="10" width="33" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="748" verticalCompressionResistancePriority="748" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ru5-yP-ddS">
+                        <rect key="frame" x="10" y="10" width="33" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -26,7 +26,7 @@
                         <rect key="frame" x="308" y="30" width="51" height="31"/>
                     </switch>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created_At" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ott-DP-QmV">
-                        <rect key="frame" x="10" y="51" width="87" height="21"/>
+                        <rect key="frame" x="10" y="50.5" width="87" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -36,7 +36,7 @@
                     <constraint firstAttribute="trailing" secondItem="oOi-pH-bO6" secondAttribute="trailing" constant="10" id="0pj-Zj-uJI"/>
                     <constraint firstItem="ott-DP-QmV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="8IQ-rv-463"/>
                     <constraint firstItem="ru5-yP-ddS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="cJE-YF-9jg"/>
-                    <constraint firstItem="ott-DP-QmV" firstAttribute="top" secondItem="ru5-yP-ddS" secondAttribute="bottom" constant="20" id="jYo-lY-HHh"/>
+                    <constraint firstItem="ott-DP-QmV" firstAttribute="top" secondItem="ru5-yP-ddS" secondAttribute="bottom" priority="999" constant="20" id="jYo-lY-HHh"/>
                     <constraint firstItem="oOi-pH-bO6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="pwp-UI-vpw"/>
                     <constraint firstItem="ru5-yP-ddS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="qN9-zh-K06"/>
                 </constraints>
