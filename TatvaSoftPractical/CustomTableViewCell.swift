@@ -9,22 +9,26 @@ import UIKit
 
 class CustomTableViewCell: UITableViewCell {
 
-    @IBOutlet var title: UILabel!
+    @IBOutlet var storyTitle: UILabel!
     
     @IBOutlet var createdAt: UILabel!
     
     @IBOutlet var switchBtn: UISwitch!
     
+    var count: Int = 0
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
         switchBtn.isOn = false
+        
     }
     @IBAction func handleSwitchChangeState(_ sender: UISwitch) {
         
         if switchBtn.isOn {
             print("True")
             contentView.backgroundColor = .gray
+            count += 1
         }else{
             print("False")
             contentView.backgroundColor = .clear
