@@ -18,8 +18,20 @@ class CustomTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        switchBtn.isOn = false
     }
-
+    @IBAction func handleSwitchChangeState(_ sender: UISwitch) {
+        
+        if switchBtn.isOn {
+            print("True")
+            contentView.backgroundColor = .gray
+        }else{
+            print("False")
+            contentView.backgroundColor = .clear
+        }
+        
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
